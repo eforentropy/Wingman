@@ -14,7 +14,7 @@ $xzSmUwcL4oZI=[Load]::LoadLibrary($f)
 
 
 if ($xzSmUwcL4oZI -eq [IntPtr]::Zero) {
-    Write-Host "[!] Unexpected Behavior. Wingman Returned Zero. Terminal Not Safe for Invoking" -ForegroundColor Red
+    Write-Host "[!] Unexpected Behavior. Wingman Returned Zero." -ForegroundColor Red
 } else {
 	Write-Host "==============================" -ForegroundColor Cyan
 	Write-Host "        Wingman Completed     " -ForegroundColor Green
