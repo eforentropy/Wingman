@@ -1,4 +1,4 @@
-$STAR= @"
+$CdGr= @"
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,14 +8,15 @@ public class Load
     public static extern IntPtr LoadLibrary(string dllToLoad);
 }
 "@
-Add-Type $STAR
-$HANDLE=[Load]::LoadLibrary($exactPATH)
+Add-Type $CdGr
+$xzSmUwcL4oZI=[Load]::LoadLibrary($nXrdUt3FDg1kzLf3)
 
 
-if ($HANDLE -eq [IntPtr]::Zero) {
+if ($xzSmUwcL4oZI -eq [IntPtr]::Zero) {
     Write-Host "[!] Unexpected Behavior. Wingman Returned Zero. Terminal Not Safe for Invoking" -ForegroundColor Red
 } else {
 	Write-Host "==============================" -ForegroundColor Cyan
 	Write-Host "        Wingman Completed     " -ForegroundColor Green
 	Write-Host "==============================" -ForegroundColor Cyan
 }
+
